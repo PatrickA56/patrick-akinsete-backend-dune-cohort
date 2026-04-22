@@ -9,13 +9,13 @@ def product_list(request):
     return render(request, 'products/product_list.html', {'products': products})
 
 def product_detail(request, pk):
-    product = get_object_or_404(Product, pk=pk)
+    product = get_object_or_404(Product, pk=pk)  
     return render(request, 'products/product_detail.html', {'product': product})
 
 def Category_list(request):
     Categories = Category.objects.all()
-    for category in Categories:
-        category.product_count = Product.objects.filter(category=category).count()
+    for category in Categories:  
+        category.product_count = Product.objects.filter(category=category).count() 
     return render(request, 'products/category_list.html', {'Categories': Categories})
 
 def about(request):
