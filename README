@@ -1,0 +1,39 @@
+Module 10 — Toriloshop: Full CRUD
+Project Description
+This module implements complete Create, Read, Update, and Delete (CRUD) functionality for both products and categories in the Toriloshop Django project. Users can add new products and categories via validated forms, edit existing entries with pre-filled forms, and delete records through a confirmation page. Flash messages provide feedback after every action, and a search feature allows filtering products by name.
+
+Features Implemented
+Products
+FeatureURLDescriptionList all products/products/Displays all products; supports search by nameView product detail/products/<pk>/Shows full details of a single productAdd product/products/add/Form to create a new product with validationEdit product/products/<pk>/edit/Pre-filled form to update an existing productDelete product/products/<pk>/delete/Confirmation page; deletes only on POST
+Categories
+FeatureURLDescriptionList all categories/categories/Displays all categories with product countAdd category/categories/add/Form to create a new categoryEdit category/categories/<pk>/edit/Pre-filled form to update a categoryDelete category/categories/<pk>/delete/Confirmation page; deletes only on POST
+Additional Features
+
+Flash messages — success messages shown after every create, edit, and delete action
+CSRF protection — all forms include {% csrf_token %}
+Form validation — price must be greater than 0, stock cannot be negative
+Search — product list can be filtered by name via a search query parameter
+
+
+Setup Instructions
+1. Clone the repository
+bashgit clone https://github.com/your-username/firstname-lastname-backend-dune-cohort.git
+cd firstname-lastname-backend-dune-cohort/module-10
+2. Create and activate a virtual environment
+bashpython -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Mac/Linux
+source venv/bin/activate
+3. Install dependencies
+bashpip install django
+4. Run migrations
+bashpython manage.py makemigrations
+python manage.py migrate
+5. Create a superuser (for admin access)
+bashpython manage.py createsuperuser
+6. Run the development server
+bashpython manage.py runserver
+Visit http://127.0.0.1:8000 in your browser.
